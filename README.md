@@ -11,5 +11,5 @@ Repositório para deploy do Kong Gateway via Helm + Argo CD em ambiente Kubernet
 
 ```bash
 kubectl apply -f argo/kong-app.yaml
----
+
 
