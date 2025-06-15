@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: kong
-          image: kong/kong-gateway:3.6
+          image: kong:3.6
           env:
             - name: KONG_DATABASE
               value: "off"
@@ -30,6 +30,7 @@ spec:
             - name: KONG_ADMIN_LISTEN
               value: "0.0.0.0:8001"
           ports:
-            - containerPort: 8000
-            - containerPort: 8443
-            - containerPort: 8001
+            - containerPort: 8000 # proxy
+            - containerPort: 8443 # proxy ssl
+            - containerPort: 8001 # admin
+            - containerPort: 8444 # admin ssl
